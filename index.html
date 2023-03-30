@@ -1,175 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>calculator</title>
-    <link rel="stylesheet" href="calc.css">
-   
-</head>
-<body>
-    
-
+    <link rel="stylesheet" href="calc.css" />
+  </head>
+  <body>
     <div class="calculator">
+      <header>
+        <div class="app_name">
+          <p>Binord Scientific Calculator</p>
+        </div>
+        <div class="app_logo">
+          <img src="./images/img11.png" alt="app logo" />
+        </div>
+      </header>
 
-        <header>
-            <div class="app_name">
-               <p>Binord Scientific Calculator</p> 
-            </div>
-            <div class="app_logo">
-                <img src="img11.png" alt="app logo">
-            </div>
-        </header>
+      <div class="screen">
+        <div id="output_bar"></div>
+        <div id="result_bar"></div>
+      </div>
 
+      <div class="calc_body">
+        <div class="functions_buttons">
+          <div class="left_section">
+            <div class="shift_function special_btn">SHIFT</div>
+            <div class="menu_function special_btn">MENU</div>
+          </div>
 
-           <div class="screen"data-value="screen1">
-           
-            
-           </div>
-       
-       
-
-          
-
-
-
-        <div class="calc_body">
-           
-            
-            <div class="functions_buttons">
-
-                <div class="left_section">
-                    <div class="shift_function" data-action="shift">SHIFT</div>
-                    <div class="menu_function" data-action="menu">MENU</div>
-                </div>
-
-                <div class="right_section">
-                    <div class="delete_function" data-action="delete">DEL</div>
-                    <div class="clear_function"data-action="clear">CLEAR</div>
-                </div>
-                  </div>
-
-
-
-
-
-                  <div class="modules">
-
-
-                    <div class="mathematical_buttons">
-                        <div class="mathematical_row-1">
-                            <div class="drg">DRG</div>
-                            <div class="xe">X<=>E</div>
-                            <div class="backward_direction"><</div>
-                            <div class="forward_direction">></div>
-                            <div class="integration">&int;dx</div>
-                            <div class="conversion">conv</div>
-                        </div>
-
-
-                        <div class="mathematical_row-2">
-                            <div class="pi">&Pi;</div>
-                            <div class="sin">sin</div>
-                            <div class="cos">cos</div>
-                            <div class="tan">tan</div>
-                            <div class="i">i</div>
-                            <div class="e">e</div>
-                        </div>
-
-
-
-                        <div class="mathematical_row-3">
-                            <div class="inverse">x<sup>-1</sup></div>
-                            <div class="square">x<sup>2</sup></div>
-                            <div class="root">&radic; x</div>
-                            <div class="variable_square">x <sup>y</sup></div>
-                            <div class="log">log</div>
-                            <div class="ln">ln</div>
-                        </div>
-
-                        <div class="mathematical_row-4">
-                            <div class="dms">D&deg;M`S</div>
-                            <div class="fraction"><mfrac>d/c</mfrac></div>
-                            <div class="x">X</div>
-                            <div class="xym">XY,M</div>
-                            <div class="mr">MR</div>
-                            <div class="xm">x->M</div>
-                        </div>
-
-
-                    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    <div class="operations_button">
-
-
-                        <div class="operations_row-1">
-                            <div class="seven">7</div>
-                            <div class="eigth">8</div>
-                            <div class="nine">9</div>
-                            <div class="open_parenthesis">(</div>
-                            <div class="closed_parenthesis">)</div>
-                        </div>
-                          
-
-                        <div class="operations_row-2">
-                            <div class="four">4</div>
-                            <div class="five">5</div>
-                            <div class="six">6</div>
-                            <div class="multiplication">*</div>
-                            <div class="division">/</div>
-                        </div>
-
-
-                        <div class="operations_row-3">
-                            <div class="one">1</div>
-                            <div class="two">2</div>
-                            <div class="three">3</div>
-                            <div class="addition">+</div>
-                            <div class="subtraction">-</div>
-                        </div>
-
-                         
-                         <div class="operations_row-4">
-                            <div class="zero">0</div>
-                            <div class="dot">.</div>
-                            <div class="const">+/-</div>
-                            <div class="exp">EXP</div>
-                            <div class="equal">=</div>
-                         </div>
-                         
-                    </div>
-
-
-
-                  </div>
-
-         
-
-
-
-
-
+          <div class="right_section">
+            <div class="delete_function special_btn">DEL</div>
+            <div class="clear_function special_btn">CLEAR</div>
+          </div>
         </div>
 
+        <div class="modules">
+          <div class="mathematical_buttons">
+            <div class="mathematical_row-1">
+              <div class="drg">DRG</div>
+              <div class="xe">X<=>E</div>
+              <div class="backward_direction arrow_btn"><</div>
+              <div class="forward_direction arrow_btn">></div>
+              <div class="integration">&int;dx</div>
+              <div class="conversion">conv</div>
+            </div>
 
+            <div class="mathematical_row-2">
+              <div class="pi">&Pi;</div>
+              <div class="sin">sin</div>
+              <div class="cos">cos</div>
+              <div class="tan">tan</div>
+              <div class="i">i</div>
+              <div class="e">e</div>
+            </div>
 
+            <div class="mathematical_row-3">
+              <div class="inverse">x<sup>-1</sup></div>
+              <div class="square">x<sup>2</sup></div>
+              <div class="root">&radic; x</div>
+              <div class="variable_square">x <sup>y</sup></div>
+              <div class="log">log</div>
+              <div class="ln">ln</div>
+            </div>
 
+            <div class="mathematical_row-4">
+              <div class="dms">D&deg;M`S</div>
+              <div class="fraction"><mfrac>d/c</mfrac></div>
+              <div class="x">X</div>
+              <div class="xym">XY,M</div>
+              <div class="mr">MR</div>
+              <div class="xm">x->M</div>
+            </div>
+          </div>
 
+          <div class="operations_button">
+            <div class="operations_row-1">
+              <div class="seven decimal_btn">7</div>
+              <div class="eigth decimal_btn">8</div>
+              <div class="nine decimal_btn">9</div>
+              <div class="open_parenthesis decimal_btn">(</div>
+              <div class="closed_parenthesis decimal_btn">)</div>
+            </div>
+
+            <div class="operations_row-2">
+              <div class="four decimal_btn">4</div>
+              <div class="five decimal_btn">5</div>
+              <div class="six decimal_btn">6</div>
+              <div class="multiplication decimal_btn">*</div>
+              <div class="division decimal_btn">/</div>
+            </div>
+
+            <div class="operations_row-3">
+              <div class="one decimal_btn">1</div>
+              <div class="two decimal_btn">2</div>
+              <div class="three decimal_btn">3</div>
+              <div class="addition decimal_btn">+</div>
+              <div class="subtraction decimal_btn">-</div>
+            </div>
+
+            <div class="operations_row-4">
+              <div class="zero decimal_btn">0</div>
+              <div class="dot decimal_btn">.</div>
+              <div class="const decimal_btn">+/-</div>
+              <div class="exp decimal_btn">EXP</div>
+              <div class="equal decimal_btn">=</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.7.0/math.js"
+      integrity="sha512-jVMFsAksn8aljb9IJ+3OCAq38dJpquMBjgEuz7Q5Oqu5xenfin/jxdbKw4P5eKjUF4xiG/GPT5CvCX3Io54gyA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <script src="calc.js"></script>
-</body>
+  </body>
 </html>
