@@ -10,11 +10,19 @@ const specialBtns = [...specialBtn];
 const arrowBtns = [...arrowBtn];
 const funcBtns = [...funcBtn];
 let expression = "";
+let cursorPos = 0;
 
 decimalBtns.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     resultBar.textContent = "";
-    expression += btn.textContent;
+
+    // Insert clicked button at current cursor position
+    expression =
+      expression.slice(0, cursorPos) +
+      btn.textContent +
+      expression.slice(cursorPos);
+    cursorPos++;
+
     outputBar.textContent = expression;
 
     if (btn.classList.contains("exp")) {
@@ -41,6 +49,7 @@ decimalBtns.forEach((btn) => {
       }
 
       expression = "";
+      cursorPos = 0;
     }
   });
 });
@@ -59,8 +68,11 @@ specialBtns.forEach((btn) => {
     }
 
     if (btn.classList.contains("delete_function")) {
-      if (expression.length > 0) {
-        expression = expression.slice(0, expression.length - 1);
+      if (expression.length > 0 && cursorPos > 0) {
+        // Delete character immediately before current cursor position
+        expression =
+          expression.slice(0, cursorPos - 1) + expression.slice(cursorPos);
+        cursorPos--;
         outputBar.textContent = expression;
       }
     }
@@ -69,6 +81,7 @@ specialBtns.forEach((btn) => {
       expression = "";
       resultBar.textContent = "";
       outputBar.textContent = expression;
+      cursorPos = 0;
     }
   });
 });
@@ -90,17 +103,19 @@ const filterExpression = (expression) => {
   return expression;
 };
 
-// TODO: Implement arrowBtns
-// arrowBtns.forEach((btn) => {
-//   let forward = 0;
-//   let backwards = 0;
-//   btn.addEventListener("click", (e) => {
-//     if (btn.classList.contains("backward_direction")) {
-//       backwards += 1;
-//     }
+arrowBtns.forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    if (btn.classList.contains("backward_direction")) {
+      if (cursorPos > 0) {
+        cursorPos--;
+      }
+    } else if (btn.classList.contains("forward_direction")) {
+      if (cursorPos < expression.length) {
+        cursorPos++;
+      }
+    }
 
-//     if (btn.classList.contains("forward_direction")) {
-//       forward += 1;
-//     }
-//   });
-// });
+    outputBar.textContent =
+      expression.slice(0, cursorPos) + "|" + expression.slice(cursorPos);
+  });
+});

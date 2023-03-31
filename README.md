@@ -10,7 +10,10 @@ A scientific calculator
 ## Notes
 
 Sin, cos and tan buttons works in radians.
+<br>
 Not all buttons are functional yet.
+<br>
+Arrow button doesn't work for all function keys
 
 ## Contributing
 
